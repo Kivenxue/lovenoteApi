@@ -15,9 +15,9 @@ class AdminController extends BaseController {
                 let res = await this.service.admin.findAccount(account)
                 if (res && res.password == password) {
                     // 生成 token
-                    const token = (new Jwt(res.account).generateToken())
+                    const token = (new Jwt(res.id).generateToken())
                     // 将 token 保存至 redis中
-                    this.service.redis.set(`${res.id}_ADMIN_TOKEN`, token, 259200000)
+                    await this.service.redis.set(`${res.id}_ADMIN_TOKEN`, token, 259200000)
                     delete res.password // 删除密码返回给前端
                     this.success({ token, userInfo: res }, '登录成功')
                 } else {
@@ -36,7 +36,10 @@ class AdminController extends BaseController {
      * 退出登录
      */
     async logout() {
-        
+        const id = this.fetchData()
+        // 删除redis 中的token
+        const res = await this.service.redis.del(`${id}_ADMIN_TOKEN`)
+        this.success(res, '退出登录成功')
     }
 }
 

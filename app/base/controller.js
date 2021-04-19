@@ -40,7 +40,11 @@ class BaseController extends Controller {
         }
         // 是否需要解密参数
         if (this.crypto) {
-            params = JSON.parse(new Crypto().decrypt(params.p))
+            try {
+                params = JSON.parse(new Crypto().decrypt(params.p))
+            } catch (error) {
+                params = new Crypto().decrypt(params.p)
+            }
         }
         return params;
     }
