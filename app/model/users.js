@@ -34,7 +34,7 @@ module.exports = app => {
         pay: { type: DOUBLE },
         isvip: { type: BOOLEAN },
         lovetime: { type: DATE },
-        myfollow: { type: INTEGER }
+        myfollow: { type: INTEGER },
     })
     Users.associate = function () {
         // 与 活动表 建立的 多对多 关系
@@ -43,6 +43,8 @@ module.exports = app => {
             foreignKey: 'users_id',
             otherKey: 'activity_id'
         })
+        // 与 黑名单 建立 一对多 关系
+        app.model.Users.hasOne(app.model.BlackList, { foreignKey: 'uid' })
         // 与 评论 表建立的 一对一 关系
         app.model.Users.hasOne(app.model.Comment, { foreignKey: 'uid' })
         // 与 社区帖子 建立 一对多 关系

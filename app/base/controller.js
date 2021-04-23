@@ -32,11 +32,13 @@ class BaseController extends Controller {
         let params;
         switch (methods.toLocaleUpperCase()) {
             case 'GET':
-                params = this.ctx.params
+                params = this.ctx.query
+                break;
             case 'PUT':
             case 'DELETE':
             case 'POST':
                 params = this.ctx.request.body
+                break;
         }
         // 是否需要解密参数
         if (this.crypto) {

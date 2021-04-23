@@ -1,4 +1,4 @@
-/**用户模型 */
+/** 管理员模型 */
 module.exports = app => {
     const { STRING, INTEGER, TEXT, DATE } = app.Sequelize
     const Admin = app.model.define('admin', {
@@ -21,7 +21,7 @@ module.exports = app => {
         },
         avatar: {
             type: TEXT,
-            defaultValue: "https://imgtu.com/i/ELAeHO",
+            defaultValue: "https://s2.ax1x.com/2019/05/17/ELAeHO.jpg",
             allowNull: false
         },
         role_id: {
@@ -38,5 +38,8 @@ module.exports = app => {
             allowNull: false
         }
     })
+    Admin.associate = function () {
+        // app.model.Admin.hasMany(app.model.BlackList, { foreignKey: 'admin_id', targetKey: 'id' })
+    }
     return Admin
 }
