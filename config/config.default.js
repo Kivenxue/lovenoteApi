@@ -36,6 +36,10 @@ module.exports = appInfo => {
         timestamps: false,
         freezeTableName: true
       }
+    },
+    // socket 配置
+    io:{
+
     }
   };
   config.redisCluter = [

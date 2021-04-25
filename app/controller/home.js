@@ -10,7 +10,8 @@ class HomeController extends Controller {
     // ctx.body = this.app.config.crypto
     // await this.service.redis.set('123', '123')
     // ctx.body = await this.service.redis.get('123')
-
+    // ctx.session.userInfo = "123"
+    ctx.body = ctx.session
     // ctx.body = 123;
   }
 }

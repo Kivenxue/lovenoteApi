@@ -31,7 +31,6 @@ class UsersController extends BaseController {
         const id = this.fetchData()
         try {
             const res = await this.service.users.removeBlackList(id);
-
             if (res) {
                 return this.success(res, '解封成功')
             }
