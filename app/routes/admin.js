@@ -2,7 +2,6 @@
 
 module.exports = app => {
   const { controller, router } = app;
-  router.get('/', controller.home.index);
   router.post('/admin/login', controller.admin.login);// 登录
   router.post('/admin/logout', controller.admin.logout)
 
@@ -14,5 +13,5 @@ module.exports = app => {
   router.post('/admin/user/ban', controller.users.setBlackList) // 设置黑名单
   router.post('/admin/user/removeban', controller.users.removeBan) // 移除黑名单
 
-  // router.get('/admin/community/list')
+  router.get('/admin/community/list', controller.community.index) // 获取文章
 };
