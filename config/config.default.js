@@ -38,7 +38,14 @@ module.exports = appInfo => {
       }
     },
     // socket 配置
-    io:{
+    io: {
+      init: {},
+      namespace: {
+        '/': {
+          connectionMiddleware: [],
+          packetMiddleware: []
+        }
+      },    
 
     }
   };
