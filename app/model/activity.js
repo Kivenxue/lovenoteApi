@@ -12,8 +12,8 @@ module.exports = app => {
         startTime: { type: DATE, },
         endTime: { type: DATE, },
         join_count: { type: INTEGER },
-        img: { type: STRING, },
-        title: { type: STRING },
+        cover: { type: STRING, }, // 活动封面图片
+        content: { type: STRING }, // 活动内容
     })
     Activity.associate = function () {
         // 与 users 表是 多对多的关系

@@ -7,7 +7,9 @@
     "declarations": true
   },
   "dependencies": {
+    "await-stream-ready": "^1.0.1",
     "crypto-js": "^4.0.0",
+    "dayjs": "^1.10.4",
     "egg": "^2.15.1",
     "egg-cors": "^2.2.3",
     "egg-scripts": "^2.11.0",
@@ -17,6 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5",
     "sequelize-typescript": "^2.1.0",
+    "stream-wormhole": "^1.1.0",
     "svg-captcha": "^1.4.0"
   },
   "devDependencies": {

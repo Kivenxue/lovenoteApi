@@ -14,4 +14,6 @@ module.exports = app => {
   router.post('/admin/user/removeban', controller.users.removeBan) // 移除黑名单
 
   router.get('/admin/community/list', controller.community.index) // 获取文章
+  
+  router.post('/admin/file/upload',controller.files.upload) // 文件上传
 };

@@ -7,7 +7,7 @@
  */
 module.exports = appInfo => {
   /**
-   * built-in config
+   * built-in config˝
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {
@@ -45,7 +45,7 @@ module.exports = appInfo => {
           connectionMiddleware: [],
           packetMiddleware: []
         }
-      },    
+      },
 
     }
   };
