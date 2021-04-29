@@ -1,4 +1,4 @@
-const BaseController = require('../base/controller')
+const BaseController = require('../../base/controller')
 const path = require('path')
 const fs = require('fs')
 

@@ -1,4 +1,4 @@
-const BaseController = require('../base/controller')
+const BaseController = require('../../base/controller')
 
 class UsersController extends BaseController {
     constructor(app) {

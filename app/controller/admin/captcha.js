@@ -1,5 +1,5 @@
-const BaseController = require('../base/controller')
-const createCode = require('../utils/captcha')
+const BaseController = require('../../base/controller')
+const createCode = require('../../utils/captcha')
 
 class CaptchController extends BaseController {
     // 向前端发送图片验证码

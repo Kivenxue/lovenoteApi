@@ -1,6 +1,6 @@
-const BaseController = require('../base/controller');
-const Crypto = require('../utils/crypto')
-const Jwt = require('../utils/jwt')
+const BaseController = require('../../base/controller');
+const Crypto = require('../../utils/crypto')
+const Jwt = require('../../utils/jwt')
 
 class AdminController extends BaseController {
     constructor(app) {
